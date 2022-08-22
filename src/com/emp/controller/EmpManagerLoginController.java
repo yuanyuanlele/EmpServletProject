@@ -26,10 +26,10 @@ public class EmpManagerLoginController extends HttpServlet {
             EmpManager empManager=empManagerService.login(username,password);
             if (empManager!=null){
                 session.setAttribute("empManager",empManager);
-                resp.sendRedirect(req.getContextPath()+"/manager/showAllEmpController");
-            }else {
-                resp.sendRedirect(req.getContextPath()+"/login.html");
+                resp.sendRedirect(req.getContextPath()+"/manager/safe/showAllEmpController");
             }
+            }else {
+            resp.sendRedirect(req.getContextPath()+"/login.html");
         }
     }
 
